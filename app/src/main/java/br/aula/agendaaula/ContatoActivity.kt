@@ -57,17 +57,17 @@ class ContatoActivity : AppCompatActivity() {
         })
 
         btnCadastro.setOnClickListener {
-                contato.nome = txtNome?.text.toString()
-                contato.endereco = txtEndereco?.text.toString()
-                contato.telefone = txtTelefone?.text.toString().toLong()
-                contato.dataNascimento = cal.timeInMillis
-                contato.email = txtEmail?.text.toString()
-                contato.site = txtSite?.text.toString()
+                contato?.nome = txtNome?.text.toString()
+                contato?.endereco = txtEndereco?.text.toString()
+                contato?.telefone = txtTelefone?.text.toString().toLong()
+                contato?.dataNascimento = cal.timeInMillis
+                contato?.email = txtEmail?.text.toString()
+                contato?.site = txtSite?.text.toString()
 
-            if(contato?.id.equals(0)){
-                ContatoRepository(this).create(contato)
+            if(contato?.id?.equals(0)!!){
+                ContatoRepository(this).create(contato!!)
             }else{
-                ContatoRepository(this).update(contato)
+                ContatoRepository(this).update(contato!!)
             }
 
             finish()
