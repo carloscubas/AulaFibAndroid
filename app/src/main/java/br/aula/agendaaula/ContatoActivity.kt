@@ -64,7 +64,7 @@ class ContatoActivity : AppCompatActivity() {
                 contato?.email = txtEmail?.text.toString()
                 contato?.site = txtSite?.text.toString()
 
-            if(contato?.id?.equals(0)!!){
+            if(contato?.id?.toInt() == 0){
                 ContatoRepository(this).create(contato!!)
             }else{
                 ContatoRepository(this).update(contato!!)
@@ -73,9 +73,6 @@ class ContatoActivity : AppCompatActivity() {
             finish()
         }
     }
-
-
-
 
     private fun updateDateInView() {
         val myFormat = "dd/MM/yyyy" // mention the format you need
